@@ -12,12 +12,15 @@ Chrome or some sort of chromium browser
 
 ### VS Code
 
-...
+1. You can install VS code by downloading the installer [here](https://code.visualstudio.com/download)
+2. Install the python extension
 
 ### Github
 
-You will need a github account for later on in the course
+You will need a github account for later on in the course. To sign up for one head [here](https://github.com/signup)
 
-### Ezcv or hugo
+### Python
 
-...
+- [Windows install guide](https://www.youtube.com/watch?v=s6X_BVfncOw)
+- [Macos Install Guide]
+- [Debian Based Linux Guide](https://www.youtube.com/watch?v=VbXE5LR1BLg)
