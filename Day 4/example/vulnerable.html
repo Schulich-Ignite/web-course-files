@@ -58,7 +58,6 @@
         </div>
         <div class="overflow-hidden" style="max-height: 30vh;">
           <div class="container px-5">
-            <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" loading="lazy" width="700" height="500">
           </div>
         </div>
       </div>
@@ -91,17 +90,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
 
 <!--Additional Tools-->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote -->
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script><!-- Code -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
+
 <!-- File saving-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" integrity="sha256-FPJJt8nA+xL4RU6/gsriA8p8xAeLGatoyTjldvQKGdE=" crossorigin="anonymous"></script>
 
@@ -110,15 +100,23 @@
     const editor = new EditorJS({ 
         // Id of Element that should contain the Editor 
         holder: 'editorjs', 
-        
-        /** 
-         * Available Tools list. 
-         * Pass Tool's class or Settings object for each Tool you want to use 
-         */ 
+
         tools: { 
-            heading: Header, 
-            list: List 
+            code: CodeTool,  
         }, 
+        data: {
+            time: 1552744582955,
+            blocks: [
+                {
+                    type: "code",
+                    data: {
+                        code:`<img src='#' onerror='alert("Yes it is this easy")'/>`
+                    }
+                }
+                
+            ],
+            version: "2.11.10"
+        }
     })
 
     function dispatchData(dispatchFunction){
@@ -147,27 +145,25 @@
     function extractDatatoHTML(outputData){
         // Takes in raw output data from editor js and turns it into a list of html strings
         formattedData = new Array();
-
+        title=""
+        description=""
         for (let contentBlock of outputData) {
 
             switch (contentBlock.type){
             case 'heading':
-                //console.log("heading", contentBlock.data)
+                // console.log("heading", contentBlock.data)
                 formattedData.push(`<h${contentBlock.data.level}>${contentBlock.data.text}</h${contentBlock.data.level}>`)
-                break
-            case 'list': // Parse lists
-                //console.log("list", contentBlock.data)
-                if (contentBlock.data.style== "ordered"){
-                    tagName = "ol"
-                }else{
-                    tagname="ul"
-                }
-                items = ""
-                for (let item of contentBlock.data.items) {
-                    items +=`<li>${item}</li>`
-                }
-                formattedData.push(`<${tagName}>${items}</${tagName}>`)
-                break
+            break
+            case 'code':
+                //console.log("code", contentBlock.data)
+                // Escape HTML sequences
+                // processedData = contentBlock.data.code.replace("<", "&lt;").replace(">", "&gt;") // What you should do
+                processedData = contentBlock.data.code
+                formattedData.push(`
+<pre>
+    <code class="language-${contentBlock.data.languageCode}">${processedData}</code>
+</pre>        `)
+            break;
             case 'paragraph':
                 //console.log("paragraph", contentBlock.data)
                 formattedData.push(`<p>${contentBlock.data.text}</p>`)
