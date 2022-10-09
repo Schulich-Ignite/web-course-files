@@ -2,9 +2,11 @@
 
 Today we're getting everything setup and ready to go for the rest of the course
 
+[Slides](https://docs.google.com/presentation/d/1YDLnu2izdXAPugegnC6_VTLPRpyskd-Hcz-Yai4ye9Y/edit?usp=sharing)
+
 ## Install Steps
 
-...
+Below are details on how to install everything you need
 
 ### Chrome
 
@@ -22,5 +24,5 @@ You will need a github account for later on in the course. To sign up for one he
 ### Python
 
 - [Windows install guide](https://www.youtube.com/watch?v=s6X_BVfncOw)
-- [Macos Install Guide]
+- [Macos Install Guide](https://www.youtube.com/watch?v=3-sPfR4JEQ8)
 - [Debian Based Linux Guide](https://www.youtube.com/watch?v=VbXE5LR1BLg)
