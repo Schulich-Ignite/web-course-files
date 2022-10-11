@@ -9,12 +9,6 @@
   - [ ] golang
 - [ ] Add filters to posts. The languageof each post will be in the tile, either in parenthesis or it will be the title
 
-## TODO
-
-- [x] Create documentation for students to use
-- [x] Finish exercise requirements
-- [ ] Reformulate requirements in the form of a client brief
-
 ## Hints
 
 Below are some extra hints to help you if you get stuck
