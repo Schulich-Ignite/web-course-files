@@ -1,5 +1,5 @@
 # Day 4
 
-Advanced JavaScript (Using libraries)
+Vendoring resources & HTML templates
 
-[Slides](https://docs.google.com/presentation/d/1YDLnu2izdXAPugegnC6_VTLPRpyskd-Hcz-Yai4ye9Y/edit?usp=sharing)
+[Slides](https://docs.google.com/presentation/d/1SLcJwooRfeAPyqo3wCGcLJIkQyG2ZdCzI3-3kJEWyvM/edit?usp=sharing)

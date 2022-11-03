@@ -1,5 +1,5 @@
 # Day 5
 
-Static Site Generators
+Advanced JavaScript (Using libraries)
 
-[Slides]()
+[Slides](https://docs.google.com/presentation/d/1YDLnu2izdXAPugegnC6_VTLPRpyskd-Hcz-Yai4ye9Y/edit?usp=sharing)
